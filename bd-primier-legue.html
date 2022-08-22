@@ -140,7 +140,48 @@ h1{
 </div>
 </section>
 <!-- row 3 complete -->
-
+<!-- ------------------------------calculator section -------------------------------->
+<!-- ---------------select players ------->
+<section class="m-1 w-25 d-grid h-75 ">
+  <div class="card p-3 bg-black text-white ">
+    <h4 class="h3 fs-2 fw-bolder">Select Your player :</h4>
+    <ol id="player-list" class="list-group-horizontal fs-3">
+      <li id="player-1" class="players text-warning">player-1</li>
+      <li id="player-2" class="players text-warning">player-2</li>
+      <li id="player-3" class="players text-warning">player-3</li>
+      <li id="player-4" class="players text-warning">player-4</li>
+      <li id="player-5" class="players text-warning">player-5</li>
+      </0l>
+  </div>
+  <!-- -------------------calculator ---------------------->
+  <div class="card p-3 bg-black text-white border border-danger mt-2 p-4">
+    <h4 class="h3 fs-2 fw-bolder text-center mb-4">Budget</h4>
+    <p>Per Player <input id="player-amount" class="ms-3 ps-2" type="number" value="" placeholder="Enter Amount"></p>
+    <button class="btn btn-info w-75 mb-5" id="calculate-btn">Calculate</button>
+    <div class="d-flex justify-content-between pe-5 mb-4">
+      <span class="">Player Expense</span>
+      <div>
+        <span>$</span>
+        <span id="player-expense">5000</span>
+      </div>
+    </div>
+    <p>Manager <input id="manager-amount" class=" ms-3 ps-2" type="number" name="" id="" value=""
+        placeholder="Enter Amount"></p>
+    <p>Coach <input id="coach-amount" class="ms-4 ps-2" type="number" name="" id="" value="" placeholder="Enter Amount">
+    </p>
+    <button class="btn btn-primary w-75 p-2" id="total-button">Calculate Total</button>
+    <div class="d-flex justify-content-between pe-5">
+      <span class="">Total</span>
+      <div>
+        <span>$</span>
+        <span id="total-expense">1000</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<!-----------------------------------functional javascript link ---------------------->
+<script src="js/bd-primier-league.js"></script>
 <!-- bootstrap js link -->
 <script src="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

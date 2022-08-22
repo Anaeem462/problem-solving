@@ -10,29 +10,6 @@ function getValueFromInputFeild(inputId) {
 }
 
 
-// player selected
-
- const selectButtons = document.getElementsByClassName('selected-button')
-let i = 0;
-
-    for (const selectButton of selectButtons) {
-      selectButton.addEventListener("click", function () {
-        const parents = selectButton.parentNode
-        const child = parents.childNodes[1];          
-       const listItems = document.getElementById("player-list");
-        
-          const listText = listItems.children[i];
-          i = i + 1;
-          if (i <=5) {
-              listText.innerText = child.innerText;
-              selectButton.setAttribute('disabled', '');
-          }
-          else {
-              alert("you can't available to Select player");
-          }
-    })    
-}
-
 // calculate
 
 //par player calculate

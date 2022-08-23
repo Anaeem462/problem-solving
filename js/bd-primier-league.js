@@ -1,17 +1,20 @@
-
 //------------- utilities Function ----------
 
 function getValueFromInputFeild(inputId) {
     const input = document.getElementById(inputId);
-    const inputString = input.value;
-     parAmount.value = "";
+    let inputString = input.value;
+    if (typeof (inputString) == "undefined") {
+        inputString = input.innerText;
+    }
+    else {
+        input.value = "";
+    }
+    
        const inputValue = parseInt(inputString);
     return inputValue;
 }
 
-
 // player selected
-
  const selectButtons = document.getElementsByClassName('selected-button')
 let i = 0;
 
@@ -26,6 +29,7 @@ let i = 0;
           if (i <=5) {
               listText.innerText = child.innerText;
               selectButton.setAttribute('disabled', '');
+              selectButton.style.backgroundColor = "gray";
           }
           else {
               alert("you can't available to Select player");
@@ -36,21 +40,42 @@ let i = 0;
 // calculate
 
 //par player calculate
+
 document.getElementById("calculate-btn").addEventListener("click", function () {
-    const playerAmount = getValueFromInputFeild("player-amount");
-    const playerExpenses = document.getElementById("player-expense");
-    playerExpenses.innerText = playerAmount * 5;    
+    if (i == 0) {
+     alert("You have to select at least One player")
+    }
+    else if (i < 5) {
+        alert("you can select upto five player");
+        const playerAmount = getValueFromInputFeild("player-amount");
+        const playerExpenses = document.getElementById("player-expenses");        
+        playerExpenses.innerText = playerAmount * i;  
+    }
+    else {
+        const playerAmount = getValueFromInputFeild("player-amount");
+        const playerExpenses = document.getElementById("player-expenses");        
+        playerExpenses.innerText = playerAmount * i;  
+    }
+    
 })
+  
 //total calculate
 document.getElementById("total-button").addEventListener("click", function () {    
+
     const managerAmount = getValueFromInputFeild("manager-amount");
     const coachAmount = getValueFromInputFeild("coach-amount");
-const managerAndCoachExpense = managerAmount + coachAmount;
-    const playerExpenses = document.getElementById("player-expense");    
-    const playerExpensesValue = parseInt(playerExpenses.innerText);
-const totalExpensesText = document.getElementById("total-expense");    
-totalExpensesText.innerText = playerExpensesValue + managerAndCoachExpense;
+
+    const managerAndCoachExpense = managerAmount + coachAmount;
+
+    const playerCost = getValueFromInputFeild("player-expenses");
+   
+    const totalExpensesText = document.getElementById("total-expense");    
+    totalExpensesText.innerText = playerCost + managerAndCoachExpense;
+
 })
+
+
+
 
 
     
